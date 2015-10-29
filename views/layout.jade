@@ -8,12 +8,44 @@ html
     meta(name="viewport", content="width=device-width, initial-scale=1")
     link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css")
     link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css")
+    script(type="text/javascript", src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js")
+    script(type="text/javascript", src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js")
   body
     #header
-        #logodiv
-            img(src="/images/logo.png" width="100px" height="80px")
-        #uldiv(class="nav-collapse collapse")
-            ul(class="nav")
-                li Home
-
+        nav(class="navbar navbar-default", id="navbarheader")
+            div(class="container-fluid")
+                div(class="navbar-header")
+                    a(class="navbar-brand", href="http://localhost:3000")
+                        img(src="/images/logo.png")
+                div(class="collapse navbar-collapse", id="navbar")
+                    ul(class="nav navbar-nav navbar-right")
+                        li(class="link1")
+                            a(href="http://localhost:3000") Home
+                        li(class="dropdown")
+                            a(class="dropdown-toggle", data-toggle="dropdown", href="#") Products
+                                span(class="caret")
+                            ul(class="dropdown-menu")
+                                li
+                                    a(href="http://localhost:3000/mobile") Mobile
+                                li
+                                    a(href="http://localhost:3000/bigdata") Big Data
+                                li
+                                    a(href="http://localhost:3000/iot") Iot/IoE
+                        li(class="dropdown")
+                            a(class="dropdown-toggle", data-toggle="dropdown", href="#") About Us
+                            ul(class="dropdown-menu")
+                                li
+                                    a(href="http://localhost:3000/Management") Management
+                                li
+                                    a(href="http://localhost:3000/CodeOfConduct") Code Of Conduct
+                                li
+                                    a(href="http://localhost:3000/BusinessProcess") Business Processes
+                                li
+                                    a(href="http://localhost:3000/Locations") Locations
+                                li
+                                    a(href="http://localhost:3000/Contacts") Contacts
+                        li(class="link1")
+                            a(href="http://localhost:3000") Blog
+    #footer
+        p(id="footerp") Copyrights - OurCo, inc 2015
     block content
