@@ -1,0 +1,33 @@
+//
+   Created by mallika on 10/28/15.
+
+extends layout
+
+block content
+    #alldivs
+        #contentdiv
+            h1 Big Data
+            p.
+                According to IDC's prediction in 2013, the market for Big Data will reach $16.1 Billion
+                in 2014, growing 6 times faster than the overall IT market. This kind of business analysis reports
+                bring great business opportunities and strong research interests among both the academic and industry
+                communities. Recently, our Big Data product offerings are organized focusing on Big Data Computing,
+                Big Data Sciences and Analytics, and Big Data Technology and Engineering
+            #videodiv
+                video(src="/images/BugsBunny.mp4", controls)
+        #rightaside
+            aside
+                h3 Our Testimonials
+                h4 "OurCo's Big Data solution really helped my business scale up" <br /><br /> -Vanessa
+                h4 "Thanks OurCo" <br /> -Shelly
+        #leftaside
+            aside
+                div(class="column")
+                    a(href="http://localhost:3000/brochure", class="thumbnail img-responsive center-block")
+                        h4 View Our Brochure
+                        object(data="/images/WelcomeToOurCo.pdf", type="application/pdf")
+
+                    a(href="http://localhost:3000/whitepaper", class="thumbnail img-responsive center-block")
+                        h4 Read our whitepaper on Big Data
+                        object(data="/images/WhitePaper.pdf", type="application/pdf")
+
