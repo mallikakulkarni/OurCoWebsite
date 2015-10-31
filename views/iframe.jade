@@ -1,0 +1,37 @@
+//
+   Created by mallika on 10/30/15.
+
+block content
+    #openmodal
+        div
+            a(title="Close", class="close") X
+            h3 Download White Paper
+            #formdiv
+                div(class="input-group")
+                    span(class="input-group-addon", id="sizing-addon1") First Name
+                    input(type="text", class="form-control", placeholder="First Name", aria-describedby="sizing-addon2")
+                div(class="input-group")
+                    span(class="input-group-addon", id="sizing-addon1") Last Name
+                    input(type="text", class="form-control", placeholder="Username", aria-describedby="sizing-addon2")
+                div(class="input-group")
+                    span(class="input-group-addon", id="sizing-addon1   ") email
+                    input(type="email", class="form-control", placeholder="Username", aria-describedby="sizing-addon2")
+                div(class="btn-group" role="group" aria-label="...")
+                    button(type="button", class="btn btn-default", id="downloadbutton") Download
+                    button(type="button",  class="btn btn-default") Cancel
+    script(type="text/javascript").
+        $(document).ready(function() {
+            $(".openmodal").click(function() {
+                $("#openmodal").css({"opacity" : 1, "position": "fixed", "left": "30%", "top": "30%", "width": "40%",
+                    "height": "40%", "border": "solid thin red", "background-color": "azure",
+                    "box-shadow": "10px 10px 5px #888888"});
+            });
+            $(".close").click(function() {
+                $("#openmodal").css({"opacity" : 0, "position": "fixed", "left": "0", "top": "0", "width": "0",
+                    "height": "0"});
+            });
+            $("#downloadbutton").click(function() {
+                
+            })
+        });
+

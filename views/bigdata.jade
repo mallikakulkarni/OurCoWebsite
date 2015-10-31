@@ -5,6 +5,7 @@ extends layout
 
 block content
     #alldivs
+        include ./leftaside.jade
         #contentdiv
             h1 Big Data
             p.
@@ -15,19 +16,6 @@ block content
                 Big Data Sciences and Analytics, and Big Data Technology and Engineering
             #videodiv
                 video(src="/images/BugsBunny.mp4", controls)
-        #rightaside
-            aside
-                h3 Our Testimonials
-                h4 "OurCo's Big Data solution really helped my business scale up" <br /><br /> -Vanessa
-                h4 "Thanks OurCo" <br /> -Shelly
-        #leftaside
-            aside
-                div(class="column")
-                    a(href="http://localhost:3000/brochure", class="thumbnail img-responsive center-block")
-                        h4 View Our Brochure
-                        object(data="/images/WelcomeToOurCo.pdf", type="application/pdf")
-
-                    a(href="http://localhost:3000/whitepaper", class="thumbnail img-responsive center-block")
-                        h4 Read our whitepaper on Big Data
-                        object(data="/images/WhitePaper.pdf", type="application/pdf")
+        include ./rightaside.jade
+    include ./iframe.jade
 
