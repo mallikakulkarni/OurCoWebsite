@@ -1,0 +1,122 @@
+//
+   Created by mallika on 10/30/15.
+
+extends layout
+
+block content
+    #managementdiv
+        #textdiv
+            h1 Management
+            p.
+                Visionary data scientists> accomplished industry veterans. Trusted Advisors. Proven investors.
+                OurCo is led by a world class team that believes in data's potential to change the world. Our company
+                is proud to be backed by Intel Capital< Investor Growth Capital< QuestMark Partners,
+                Golaman Sachs, TransLink Capital and other strategic investors.
+            #bottomdiv
+                #addiv
+                    include ./related.jade
+            #photosdiv
+                h1 Executive Team
+                div(class="row")
+                    div(class="col-sm-6 col-md-4")
+                        div(class="thumbnail")
+                            img(class="mgmtimg", src="/images/Dumbledore.jpeg")
+                            div(class="caption")
+                                h3(class="mgmtName") ALBUS DUMBLEDORE
+                                h2 CEO & Co-Founder
+                                p
+                                    a(id="ceoinfo", class="btn btn-info", role="button", class="info", data-toggle="modal", data-target="#dumModal") More
+                    div(class="col-sm-6 col-md-4")
+                        div(class="thumbnail")
+                            img(class="mgmtimg", src="/images/HarryPotter.jpeg")
+                            div(class="caption")
+                                h3(class="mgmtName") HARRY POTTER
+                                h2 COO & Co Founder
+                                p
+                                    a(id="cooinfo", class="btn btn-info", role="button", class="info", data-toggle="modal", data-target="#harryModal") More
+                    div(class="col-sm-6 col-md-4")
+                        div(class="thumbnail")
+                            img(class="mgmtimg", src="/images/Hermione.jpeg")
+                            div(class="caption")
+                                h3(class="mgmtName") HERMIONE GRANGER
+                                h2 CTO
+                                p
+                                    a(id="ctoinfo", class="btn btn-info", role="button", data-toggle="modal", data-target="#herModal") More
+                    div(class="col-sm-6 col-md-4")
+                        div(class="thumbnail")
+                            img(class="mgmtimg", src="/images/RonWeasley.jpeg")
+                            div(class="caption")
+                                h3(class="mgmtName") RONALD WEASLEY
+                                h2 CFO
+                                p
+                                    a(id="cfoinfo", class="btn btn-info", role="button", data-toggle="modal", data-target="#ronModal") More
+    div(class="modal fade", id="ronModal", tabindex="-1", role="dialog", aria-labelledby="myModalLabel")
+        div(class="modal-dialog", role="document")
+            div(class="modal-content")
+                div(class="modal-header")
+                    button( type="button", class="close", data-dismiss="modal", aria-label="Close")
+                        span(aria-hidden="true") &times;
+                            h2(class="modal-title", id="ronModalLabel") Ron Weasley
+                div(class="modal-body")
+                    img(class="mgmtimg", src="/images/RonWeasley.jpeg")
+                    h4.
+                        Ron Weasley is one of Harry Potter's best friends and was instrumental in helping him
+                        nab Voldemort. He has play crucial part in all seven of the books. At the end of the books,
+                        he is an employee fo the Ministry of Magic. <br />Ron has two children, aged 7 and 9 and is
+                        a self confessed foodie.
+                div(class="modal-footer")
+                    a(href="https://www.linkedin.com/in/mallikaakulkarni")
+                        img(class="mgmtimg", src="/images/Linkedin.png")
+    div(class="modal fade", id="herModal", tabindex="-1", role="dialog", aria-labelledby="herModalLabel")
+        div(class="modal-dialog", role="document")
+            div(class="modal-content")
+                div(class="modal-header")
+                    button( type="button", class="close", data-dismiss="modal", aria-label="Close")
+                        span(aria-hidden="true") &times;
+                            h4(class="modal-title", id="herModalLabel") Hermione Granger
+                div(class="modal-body")
+                    img(class="mgmtimg", src="/images/Hermione.jpeg")
+                    h4.
+                        Hermione Granger is one of Harry Potter's best friends and was instrumental in helping him
+                        nab Voldemort. Always at the top of her class throughout school, she now works as a Auror.
+                        <br />She loves order in her life, makes copious notes about everything and is a stickler
+                        for being before time for all meetings.
+                div(class="modal-footer")
+                    a(href="https://www.linkedin.com/in/mallikaakulkarni")
+                        img(class="mgmtimg", src="/images/Linkedin.png")
+    div(class="modal fade", id="harryModal", tabindex="-1", role="dialog", aria-labelledby="harryModalLabel")
+        div(class="modal-dialog", role="document")
+            div(class="modal-content")
+                div(class="modal-header")
+                    button( type="button", class="close", data-dismiss="modal", aria-label="Close")
+                        span(aria-hidden="true") &times;
+                            h4(class="modal-title", id="harryModalLabel") Harry Potter
+                div(class="modal-body")
+                    img(class="mgmtimg", src="/images/HarryPotter.jpeg")
+                    h4.
+                        Harry Potter is the chosen one. He plays the central role of the series, and rids the
+                        world of Lord Voldemort at the end of it. He is corageous, ambitious and generous.
+                        <Br />He likes to spend time with his 3 children and loves to watch and play Quidditch.
+                div(class="modal-footer")
+                    a(href="https://www.linkedin.com/in/mallikaakulkarni")
+                        img(class="mgmtimg", src="/images/Linkedin.png")
+    div(class="modal fade", id="dumModal", tabindex="-1", role="dialog", aria-labelledby="dumModalLabel")
+        div(class="modal-dialog", role="document")
+            div(class="modal-content")
+                div(class="modal-header")
+                    button( type="button", class="close", data-dismiss="modal", aria-label="Close")
+                        span(aria-hidden="true") &times;
+                            h4(class="modal-title", id="dumModalLabel") Albus Dumbledore
+                div(class="modal-body")
+                    img(class="mgmtimg", src="/images/Dumbledore.jpeg")
+                    h4.
+                        Albus Dumbledore is the Headmaster of the Hogwarts School of Witchcraft and Wizardry.
+                        His job is to watch over 'the kids'. He also acts as a consultant to the
+                        Ministry of Magic every now and then. He has had an illustrious career, also having the
+                        '12 uses of Alchemy' to his credit.
+                div(class="modal-footer")
+                    a(href="https://www.linkedin.com/in/mallikaakulkarni")
+                        img(class="mgmtimg", src="/images/Linkedin.png")
+
+
+

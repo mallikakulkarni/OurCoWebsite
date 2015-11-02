@@ -1,0 +1,48 @@
+//
+   Created by mallika on 10/30/15.
+
+block content
+    div(class="modal fade", id="openModal", tabindex="-1", role="dialog", aria-labelledby="myModalLabel")
+        div(class="modal-dialog", role="document")
+            div(class="modal-content")
+                div(class="modal-header")
+                    button( type="button", class="close", data-dismiss="modal", aria-label="Close")
+                        span(aria-hidden="true") &times;
+                        h2(class="modal-title", id="ronModalLabel") Download White Paper
+                form()
+                    div(class="modal-body")
+                        div(class="form-group")
+                            label(for="first-name", required='true', class="control-label") First Name
+                            input(type="text", name='first-name', class="form-control", placeholder="First Name",
+                            id="first-name", value='Dinesh')
+                        div(class="form-group")
+                            label(for="last-name", required='true', class="control-label") Last Name
+                            input(type="text", name='last-name', class="form-control", placeholder="Last Name",
+                            id="last-name", value='Joshi')
+                        div(class="form-group")
+                            label(for="email", equired='true', class="control-label") Email
+                            input(type="email", name='email', class="form-control", placeholder="Email",
+                            id="email", value='m@g')
+                        button(type="submit", class="btn btn-success", id="downloadbutton") Download
+
+    script(type="text/javascript").
+        //$(document).ready(function() {
+          //  console.log('Here');
+            $("form").on('submit', function (event) {
+                event.preventDefault();
+                var formdata = $(this).serialize();
+                console.log('serialized = ' + formdata);
+                //alert($("form").serialize());
+                $.ajax({
+                    type: "POST",
+                    url: 'http://localhost:3000/saveUserData',
+                    data: formdata,
+                    success: function (status) {
+                        $('#responsestatus').val(status);
+                        $('#subscription-confirm').modal('show');
+                        $(location).attr('href', '/whitepaper')
+                    }
+                });
+            });
+        //});
+

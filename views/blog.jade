@@ -1,0 +1,70 @@
+//
+   Created by mallika on 10/29/15.
+
+extends layout
+
+block content
+    #bloglist
+        ul(class="list-group", id="upper")
+            each val in ['October', 'September']
+                li(class='list-group-item')
+                    span(class='badge outer')
+                    span(class="outer", id=val)
+                        = val
+                    ul(class="list-group outerul", id=val+'inner')
+    #blogdiv
+        #blogcontent
+            h1 Blogs
+            h3 !{JSON.stringify(bloglist.October.blogs[0].blogTitle)}
+            p !{JSON.stringify(bloglist.October.blogs[0].blogContent)}
+        #related
+            include ./related.jade
+        script(type="text/javascript").
+            var blogs = !{JSON.stringify(bloglist)};
+            $(document).ready(function() {
+                $(".outer").each(function() {
+                    switch(this.id) {
+                        case 'September':
+                            $("#September > .badge").html(blogs.September.number);
+                            break;
+                        case 'October':
+                            $("#October > .badge").html(blogs.October.number);
+                            break;
+                    }
+                });
+                $(".outer").click(function() {
+                    if ($("#"+this.id+"inner").children().length > 0) {
+                        $("#"+this.id+"inner").empty();
+                    } else {
+                        var blogRec = blogs[this.id];
+                        for (var index in blogRec.blogs) {
+                            var blog = blogRec.blogs[index];
+                            $("#" + this.id + "inner").append('<li class="list-group-item inner" id="' + blog.blogTitle + '">' + blog.blogTitle + '</li>');
+                        }
+                    }
+                });
+                $(".outerul").on("click", $(".inner"), function() {
+                    var target = $(event.target);
+                    var tid = target.attr('id');
+                    switch(this.id) {
+                        case 'Septemberinner':
+                            var septblogs = blogs.September.blogs;
+                            replaceContent(septblogs, tid);
+                            break;
+                        case 'Octoberinner':
+                            var octblogs = blogs.October.blogs;
+                            replaceContent(octblogs, tid);
+                            break;
+                    }
+                    console.log(target.attr('id'));
+                });
+                function replaceContent(blogs, tid) {
+                    for (var index in blogs) {
+                        if (blogs[index].blogTitle === tid) {
+                            $("#blogcontent > h3").html(blogs[index].blogTitle);
+                            $("#blogcontent > p").html(blogs[index].blogContent);
+                            break;
+                        }
+                    }
+                }
+            });

@@ -5,25 +5,23 @@ extends layout
 
 block content
     #alldivs
+        include ./leftaside.jade
         #contentdiv
             h1 Internet Of Things
             p.
-                Gartner defines the Internet of Thin
-            #videodiv
-                video(src="/images/BugsBunny.mp4", controls)
-        #rightaside
-            aside
-                h3 Our Testimonials
-                h4 "OurCo's Big Data solution really helped my business scale up" <br /><br /> -Vanessa
-                h4 "Thanks OurCo" <br /> -Shelly
-        #leftaside
-            aside
-                div(class="column")
-                    a(href="http://localhost:3000/brochure", class="thumbnail img-responsive center-block")
-                        h4 View Our Brochure
-                        object(data="/images/WelcomeToOurCo.pdf", type="application/pdf")
-
-                    a(href="http://localhost:3000/whitepaper", class="thumbnail img-responsive center-block")
-                        h4 Read our whitepaper on Big Data
-                        object(data="/images/WhitePaper.pdf", type="application/pdf")
+                Gartner defines the Internet of Things as the network of physical objects that contain embedded
+                technology to communicate and sense or interact with their internal state or external environment
+                <br />As per the International Data Corporation (IDC) press release, "The Internet of Things
+                Is Poised to change everything", the Internet Of Things represents a new construct in the information
+                and communications technology world that is occupying the minds of the iT vendors, service providers
+                and systems integrators as it represents huge potential for new streams of revenue and new customers.
+            #pricingdiv
+                h1 Our offer pricing
+                div
+                    div
+                        p Number of sensors: 30 <br />Data Stream: 30 kb/s <br /> Price: $30/month
+                    div
+                        p Number of sensors: 60 <br />Data Stream: 50 kb/s <br /> Price: $50/month
+        include ./rightaside.jade
+    include ./iframe.jade
 
