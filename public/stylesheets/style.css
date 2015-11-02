@@ -82,10 +82,40 @@ img {
     font-size: 20px;
 }
 
-#addiv {
+#addiv, #bloglist {
     width: 25%;
     left: 0;
     float: left;
+    margin-left: 10px;
+    margin-top: 5%;
+}
+
+#related {
+    float: left;
+    margin-left: 5%;
+    width: 30%;
+}
+
+#blogdiv {
+    float: left;
+    text-align: center;
+    margin-left:5%;
+    width: 65%;
+}
+
+
+#blogcontent {
+    float: left;
+    left: 25%;
+    width: 60%;
+    height: 70%;
+    overflow-y: scroll;
+    opacity: 0.4;
+    border: thin solid skyblue;
+    margin-left:5%;
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: medium;
+
 }
 
 #photosdiv {
@@ -176,7 +206,7 @@ object {
     height: 100%;
 }
 
-#openmodal {
+#modaldiv {
     font-family: Arial, Helvetica, sans-serif;
     left: 0;
     top: 0;
@@ -199,3 +229,72 @@ button {
     height: 50%;
 }
 
+.mgmtName {
+    color: dodgerblue;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+
+.modal-body > h4 {
+    text-align: center;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+
+.modal-footer > a > img {
+    width: 3em;
+    height: 3em;
+}
+
+#fnewsdiv {
+    background-color: #000000;
+    color: #ffffff;
+    padding: 10px;
+}
+
+#combdiv {
+    width: 80%;
+    border: thin solid gray;
+    background-color: lightgray;
+    font-size: medium;
+}
+
+#elabdiv {
+    padding: 10px;
+    font-size: medium;
+}
+
+#computingdiv {
+    background-color: #ffffff;
+    font-family: Georgia, serif;
+    font-size: 2em;
+    color: mediumblue;
+    margin: 5%;
+    padding: 5px;
+}
+
+#titlediv {
+    text-align: center;
+}
+
+#fremontdiv, #secunddiv {
+    width: 35%;
+    text-align: left;
+    padding: 10px;
+    margin-left: 10%;
+    float: left;
+    height: 80%;
+}
+
+#fremonttitle, #secundtitle {
+    height: 5em;
+}
+
+#fremontloc, #secunderabadloc {
+    width: 28%;
+    height: 50%;
+    position: absolute;
+}
+
+.modal-body > button {
+    width: 20%;
+    margin-left: 40%;
+}

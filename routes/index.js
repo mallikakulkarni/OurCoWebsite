@@ -1,8 +1,11 @@
 var express = require('express');
 var router = express.Router();
+var mongo = require('mongodb').MongoClient;
+var fs = require('fs');
+var pdf = require('./newFile.js');
 
-var bloglist = [
-    {
+var bloglist = {
+    October: {
         month: 'October',
         number: 2,
         blogs: [
@@ -36,7 +39,7 @@ var bloglist = [
             }
         ]
     },
-    {
+    September: {
         month: 'September',
         number: 2,
         blogs: [
@@ -74,7 +77,7 @@ var bloglist = [
             }
         ]
     }
-]
+}
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -89,8 +92,20 @@ router.get('/brochure', function(req, res, next) {
     res.render('brochure');
 });
 
+router.post('/saveUserData', function(req, res, next) {
+    // save user data here
+    console.log(req.body);
+    res.end();
+});
+
 router.get('/whitepaper', function(req, res, next) {
-    res.render('whitepaper');
+    res.setHeader('Content-type', 'application/pdf');
+    res.setHeader('Content-disposition', 'attachment; filename=WhitePaper.pdf');
+    res.setHeader("Content-Transfer-Encoding",  "binary");
+    pdf.readfile(function(doc) {
+        res.send(doc.data.buffer)
+        res.end();
+    });
 });
 
 router.get('/iot', function(req, res, next) {
@@ -104,5 +119,10 @@ router.get('/blog', function(req, res, next) {
 router.get('/Management', function(req, res, next) {
     res.render('management');
 });
+
+router.get('/Locations', function(req, res, next) {
+    res.render('locations');
+});
+
 
 module.exports = router;
